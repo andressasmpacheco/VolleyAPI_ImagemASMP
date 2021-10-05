@@ -9,8 +9,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.Cache;
+import com.android.volley.Network;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.BasicNetwork;
+import com.android.volley.toolbox.DiskBasedCache;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageRequest;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnCarregar;
     ImageView imgServidor;
 
-    String server_url = "'http://10.67.96.150/projetovolleyapi/tecnologia.jpg";
+    String server_url = "http://192.168.0.33/ProjetoVolleyAPI/tec.jpg";
 
 
     @Override
@@ -26,12 +32,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //anuncio os objetos do xml para o java
         btnCarregar = findViewById(R.id.btnCarregarImagem);
         imgServidor = findViewById(R.id.imgServidor);
 
-        //criando o carrega imagem
         btnCarregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,7 +8,6 @@ import com.android.volley.toolbox.Volley;
 
 public class MySingleton {
 
-    //variaveis globais para conexão e para os protocolos de comunicação
     private static MySingleton myInstance;
     private RequestQueue requestQueue;
     private static Context myContext;
